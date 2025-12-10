@@ -1,0 +1,22 @@
+title: Operating-Potato's Website
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Operating-Potato's Website
+baseurl: "/articles" # the subpath of your site, e.g. /blog
+url: "https://operating-potato.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  Operating-Potato
+defaults:
+    -
+        scope:
+            path: ""
+            type: "posts"
+        values:
+            layout: "post"
+            author: "Charles 艾"
+
+
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
