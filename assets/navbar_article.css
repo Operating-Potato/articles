@@ -51,6 +51,11 @@ a.navlink {
 }
 
 
+@media (prefers-color-scheme: dark) {
+    a.navlink {
+        color: white !important;
+    }
+}
 
 
 /*hover*/

@@ -3,10 +3,37 @@
 
 @import "minima";
 
-body {
-    background-color: rgb(220,220,220);
-    font-family: serif;
+:root {
+    --page-colour: white;
+    --page-shadow-colour: #B0B0B0;
+    --bg-colour: rgb(220,220,220);
+    --link-colour: #658FC6;
+    --link-visited-colour: #1756a9;
+    --text-colour: black;
+    --meta-colour: #828282;
+    --outline-colour: rgb(220,220,220);
 }
+
+body {
+    background-color: var(--bg-colour);
+    font-family: serif;
+    color: var(--text-colour);
+}
+a {
+    color: var(--link-colour);
+}
+
+a:visited {
+    color: var(--link-visited-colour);
+}
+
+a:hover {
+    color:var(--text-colour);
+}
+.post-meta {
+    color: var(--meta-colour);
+}
+
 .container {
     display:flex;
     flex-flow: row;
@@ -14,7 +41,7 @@ body {
     margin: 10px;
 }
 .main {
-    background-color: white;
+    background-color: var(--page-colour);
     width: 100%;
     height:auto;
     max-width: 700px;
@@ -24,7 +51,7 @@ body {
     padding-left: 25px;
     padding-right: 25px;
 
-    border-radius: 3px;
+    box-shadow: 7px 10px var(--page-shadow-colour);
 }
 
 //post page
@@ -34,10 +61,8 @@ body {
 
 //post attachments
 img {
-    border-radius: 5px;
     box-sizing: border-box;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 //places
@@ -47,7 +72,7 @@ img {
 }
 .right {
     float: right;
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 //sizes
@@ -78,23 +103,32 @@ img {
     margin: 20px 0 20px 0;
 }
 
+@media only screen and (max-width: 720px) {
+    .xlarge {
+        width: 100%;
+        float:none;
+        margin:0 0 5px 0;
+    }
+}
 @media only screen and (max-width: 600px) {
     .medium, .large {
         width: 100%;
         float:none;
-        margin:0;
+        margin:0 0 5px 0;
     }
+}
+.thumb {
+    margin-bottom: 20px !important;
 }
 
 
 //homepage
-
+#footer-image {
+    width: 100%;
+    display: flex;
+}
 #lilguy {
     width: 300px;
-}
-
-.boxlink {
-    display: block;
 }
 
 .post-box {
@@ -106,16 +140,16 @@ img {
     margin-bottom: 15px !important;
 
     border-style: solid;
-    border-color: rgb(220,220,220);
+    border-color: var(--outline-colour);
     border-width: 2px;
-    border-radius: 8px;
+
     padding: 10px;
     box-sizing: border-box;
 
     overflow: hidden;
 }
 .post-box:hover {
-    border-color:#658FC6;
+    border-color: var(--link-colour);
 }
 
 .thumbnail {
@@ -156,13 +190,29 @@ img {
   position:absolute;
   left:0;
   top:0;
-  background:linear-gradient(transparent 80px, white);
+  background:linear-gradient(transparent 80px, var(--page-colour));
 }
 
 
 
 //mobile
 @media only screen and (max-width: 500px) {
+    //general
+    html, body {
+        background-color: var(--page-colour);
+    }
+    .container {
+        margin: 0;
+    }
+    .main {
+        box-shadow: none;
+    }
+
+    #footer-image {
+        justify-content: center;
+    }
+
+    //posts
     .post-box {
         max-height: 390px;
         flex-flow: column;
@@ -177,5 +227,21 @@ img {
         margin-left: 0;
         margin: 0;
         margin-bottom: 10px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --page-colour: rgb(50,50,50);
+        --page-shadow-colour: rgb(12, 12, 12);
+        --bg-colour: rgb(20,20,20);
+        --link-colour: #8ab0e1;
+        --link-visited-colour: #4f86c9;
+        --text-colour: white;
+        --meta-colour: #bebebe;
+        --outline-colour: rgb(100, 100, 100);
+    }
+    #lilguy {
+        filter: invert(0.805);
     }
 }

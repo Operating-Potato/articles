@@ -25,15 +25,16 @@ layout: default
               </a>
             </h3>
             <div class="excerpt">
-              {{ post.content }}
+              {{ post.content | strip }}
             </div>
           </div>          
         </li>
       {%- endfor -%}
     </ul>
 
-
-    <img src="{{ "/assets/footer-image.jpg" | relative_url }}" id="lilguy">
+    <div id="footer-image">
+      <img src="{{ "/assets/footer-image.jpg" | relative_url }}" id="lilguy">
+    </div>
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
 
