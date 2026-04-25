@@ -13,7 +13,7 @@ layout: default
       {%- for post in site.posts -%}
         <li class="post-box">
           {%- if post.thumbnail -%}
-            <img src="{{ "/articles/assets/attachments/" | append: post.thumbnail }}" class="thumbnail">
+            <img src="{{ post.thumbnail }}" class="thumbnail">
           {%- endif -%}
           <div class="post-text">
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}

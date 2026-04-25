@@ -12,7 +12,7 @@ defaults:
             type: "posts"
         values:
             layout: "post"
-            author: "Charles 艾"
+            author: "Charles"
 
 
 
