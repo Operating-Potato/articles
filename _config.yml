@@ -1,7 +1,7 @@
-title: Operating-Potato's Website
+title: 372 Disguised Pompanos
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Operating-Potato's Website
+  372 Disguised Pompanos
 baseurl: "/articles" # the subpath of your site, e.g. /blog
 url: "https://operating-potato.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Operating-Potato
